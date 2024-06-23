@@ -13,7 +13,7 @@ const CarColorDetector = () => {
     setImage(acceptedFiles[0]);
   }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({
+  const { getRootProps } = useDropzone({
     onDrop,
     onDragEnter: () => setDragActive(true),
     onDragLeave: () => setDragActive(false),
@@ -56,10 +56,7 @@ const CarColorDetector = () => {
                 className="w-full h-72 border-2 border-dashed border-[#4C4CBD] rounded-2xl flex flex-col items-center justify-center bg-gray-50 cursor-pointer"
               >
                 <div
-                  className="w-7/12 mt-2 h-44 bg-red-500 rounded-2xl"
-                  style={{
-                    backgroundImage: "linear-gradient(to right, #FF69B4, #FFC0CB)",
-                  }}
+                  className="w-7/12 h-36 bg-red-500 rounded-2xl"
                 />
                 <p className="text-2xl font-bold text-[#4C4CBD] mt-2">
                   {carColor} Car
@@ -73,12 +70,11 @@ const CarColorDetector = () => {
               </div>
             ) : (
               <div
-                {...getRootProps()}
+              {...(image ? {} : getRootProps())}
                 className={`w-full h-72 border-2 border-dashed border-[#4C4CBD] rounded-2xl flex flex-col items-center justify-center bg-gray-50 cursor-pointer ${
                   dragActive? "bg-blue-100" : "bg-[#f2f2ff]"
                 }`}
               >
-                <input {...getInputProps()} />
                 {image? (
                   <img
                     src={URL.createObjectURL(image)}
