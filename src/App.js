@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";july 2023
+import Home from "./Home";
+import Navbar from "./Navbar";
+import CarColorDetector from "./CarColorDetector";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <BrowserRouter>
+    <div>
+      <Navbar />
+      <div>
+      <Home />
+      <CarColorDetector/>
+        {/* <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/car-color-detection" element={<Home />} />
+            <Route path="/human-counting" element={<Home />} />
+            <Route path="/malaria-detection" element={<Home />} />
+          </Routes> */}
+      </div>
     </div>
+    // </BrowserRouter>
   );
 }
 
