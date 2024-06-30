@@ -2,7 +2,6 @@ import React from "react";
 import malaria_card from "./images/malaria_card.jpg";
 import car_card from "./images/car_card.jpg";
 import people_card from "./images/people_card.jpeg";
-// import { Link } from "react-router-dom";
 
 function Card({ text, image, redirect }) {
   return (
